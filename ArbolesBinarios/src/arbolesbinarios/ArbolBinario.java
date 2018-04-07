@@ -89,5 +89,12 @@ public class ArbolBinario {
             return  postOrder(n.izq) + postOrder(n.der) + n.dato + ", ";
     }
     
+    public Integer contar(Nodo n){
+        if(n == null)
+            return 0;
+        else
+            return 1 + contar(n.izq) + contar(n.der);       
+    }
+    
     
 }
