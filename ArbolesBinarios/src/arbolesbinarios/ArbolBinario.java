@@ -11,7 +11,7 @@ package arbolesbinarios;
  */
 public class ArbolBinario {
     
-    public Nodo nodo;
+    private Nodo nodo;
     
     public ArbolBinario(){
         this.nodo = null;       
@@ -21,7 +21,6 @@ public class ArbolBinario {
         return nodo == null;
     }
     
-   
     public void insertar(Integer dato){
         if(estaVacio()){
             nodo = new Nodo(dato);
@@ -65,54 +64,80 @@ public class ArbolBinario {
         return false;       
     }
     
-    public String inOrder(Nodo n){
+    public String inOrder(){
+        return inOrderH(this.nodo);
+    }
+    
+    private String inOrderH(Nodo n){    
+        if (n == null)
+            return "";
+        else
+            return inOrderH(n.izq) + n.dato + ", " + inOrderH(n.der);
+    }
+    
+    
+    public String preOrder(){
+        return preOrderH(this.nodo);
+    }
+    
+    private String preOrderH(Nodo n){
         
         if (n == null)
             return "";
         else
-            return inOrder(n.izq) + n.dato + ", " + inOrder(n.der);
+            return n.dato + ", " + preOrderH(n.izq) + preOrderH(n.der);
     }
     
-    public String preOrder(Nodo n){
+    
+    public String postOrder(){
+        return postOrderH(this.nodo);
+    }
+       
+    private String postOrderH(Nodo n){
         
         if (n == null)
             return "";
         else
-            return n.dato + ", " + preOrder(n.izq) + preOrder(n.der);
+            return  postOrderH(n.izq) + postOrderH(n.der) + n.dato + ", ";
     }
     
-    public String postOrder(Nodo n){
-        
-        if (n == null)
-            return "";
-        else
-            return  postOrder(n.izq) + postOrder(n.der) + n.dato + ", ";
+    
+    public Integer contar(){
+        return contarH(this.nodo);
     }
     
-    public Integer contar(Nodo n){
+    private Integer contarH(Nodo n){
         if(n == null)
             return 0;
         else
-            return 1 + contar(n.izq) + contar(n.der);       
+            return 1 + contarH(n.izq) + contarH(n.der);       
     }
     
-    public Integer hojas(Nodo n){
-        
+    public Integer hojas(){
+        return hojasH(this.nodo);
+    }
+      
+    private Integer hojasH(Nodo n){   
         if(n == null)
             return 0;
         else if((n.izq == null) && (n.der == null))
             return 1;
         else
-            return hojas(n.izq) + hojas(n.der);
+            return hojasH(n.izq) + hojasH(n.der);
     }
     
-    public Integer profundidad(Nodo n){
+    
+    public Integer profundidad(){
+        return profundidadH(this.nodo);
+    }
+    
+    private Integer profundidadH(Nodo n){
         if (n== null)
             return 0;
-        else if(profundidad(n.izq) > profundidad(n.der))
-            return 1 + profundidad(n.izq);
+        else if(profundidadH(n.izq) > profundidadH(n.der))
+            return 1 + profundidadH(n.izq);
         else
-            return 1 + profundidad(n.der);
+            return 1 + profundidadH(n.der);
     }
     
     
