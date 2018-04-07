@@ -24,15 +24,19 @@ public class ArbolesBinarios {
         arbolBinario.insertar(2);
         arbolBinario.insertar(4);
         
-        
+        /*
         System.out.println(arbolBinario.nodo.dato);
         System.out.println(arbolBinario.nodo.izq.dato);
         System.out.println(arbolBinario.nodo.der.dato);
         System.out.println(arbolBinario.nodo.izq.izq.dato);
         System.out.println(arbolBinario.nodo.izq.der.dato);
+        */
+        
+        
         
         System.out.println(arbolBinario.buscar(4));
-
+        System.out.println(arbolBinario.inOrder(arbolBinario.nodo));
+        System.out.println(arbolBinario.preOrder(arbolBinario.nodo));
 
     }
     

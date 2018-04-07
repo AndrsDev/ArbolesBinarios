@@ -64,10 +64,30 @@ public class ArbolBinario {
         }      
         return false;       
     }
-    /*
-    public String inorder(Nodo n){
-        if aux 
+    
+    public String inOrder(Nodo n){
+        
+        if (n == null)
+            return "";
+        else
+            return inOrder(n.izq) + n.dato + ", " + inOrder(n.der);
     }
-    */
+    
+    public String preOrder(Nodo n){
+        
+        if (n == null)
+            return "";
+        else
+            return n.dato + ", " + preOrder(n.izq) + preOrder(n.der);
+    }
+    
+    public String postOrder(Nodo n){
+        
+        if (n == null)
+            return "";
+        else
+            return  preOrder(n.izq) + preOrder(n.der) + n.dato + ", ";
+    }
+    
     
 }
