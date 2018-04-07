@@ -86,7 +86,7 @@ public class ArbolBinario {
         if (n == null)
             return "";
         else
-            return  preOrder(n.izq) + preOrder(n.der) + n.dato + ", ";
+            return  postOrder(n.izq) + postOrder(n.der) + n.dato + ", ";
     }
     
     
