@@ -95,6 +95,13 @@ public class ArbolBinario {
         else
             return 1 + contar(n.izq) + contar(n.der);       
     }
-    
+    public Integer hojas(Nodo n){
+        if(n.izq==null&&
+                n.der==null
+                )
+            return 1;
+        else
+            return hojas(n.izq)+hojas(n.der);
+    }
     
 }
