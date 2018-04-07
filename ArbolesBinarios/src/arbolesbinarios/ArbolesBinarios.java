@@ -5,6 +5,7 @@
  */
 package arbolesbinarios;
 
+import java.util.Scanner;
 /**
  *
  * @author Andrés Sanabria & Erick Salazar
@@ -14,33 +15,52 @@ public class ArbolesBinarios {
     /**
      * @param args the command line arguments
      */
+    
+    public static Scanner read = new Scanner(System.in);
     public static void main(String[] args) {
         
         ArbolBinario arbolBinario = new ArbolBinario();
+       
         
+        //Insertamos algunos elementos al árbol
         arbolBinario.insertar(5);
         arbolBinario.insertar(3);
         arbolBinario.insertar(7);
         arbolBinario.insertar(2);
         arbolBinario.insertar(4);
-        
-        /*
-        System.out.println(arbolBinario.nodo.dato);
-        System.out.println(arbolBinario.nodo.izq.dato);
-        System.out.println(arbolBinario.nodo.der.dato);
-        System.out.println(arbolBinario.nodo.izq.izq.dato);
-        System.out.println(arbolBinario.nodo.izq.der.dato);
-        */
+        arbolBinario.insertar(1);
         
         
-        
-        System.out.println(arbolBinario.buscar(4));
-        System.out.println(arbolBinario.inOrder(arbolBinario.nodo));
-        System.out.println(arbolBinario.preOrder(arbolBinario.nodo));
-        System.out.println(arbolBinario.postOrder(arbolBinario.nodo));
-        System.out.println(arbolBinario.contar(arbolBinario.nodo));
-        System.out.println(arbolBinario.hojas(arbolBinario.nodo));
+        String inOrder = arbolBinario.inOrder(arbolBinario.nodo);
+        String preOrder = arbolBinario.preOrder(arbolBinario.nodo);
+        String postOrder = arbolBinario.postOrder(arbolBinario.nodo);
+        Integer contar = arbolBinario.contar(arbolBinario.nodo);
+        Integer hojas = arbolBinario.hojas(arbolBinario.nodo);
+        Integer profundidad = arbolBinario.profundidad(arbolBinario.nodo);
 
+        
+        
+  
+        System.out.println("El formato inOrder es: " + inOrder);
+        System.out.println("El formato preOrder es: " + preOrder);
+        System.out.println("El formato postOrder es: " + postOrder);
+        
+        System.out.println();
+        
+        System.out.println("La cantidad de nodos son: " + contar);
+        System.out.println("La cantidad de hojas es: " + hojas);
+        System.out.println("La profundidad del árbol es: " + profundidad);
+        
+        System.out.println();
+        
+        
+        System.out.println("Ingrese un número que desea buscar: ");
+        Integer num = read.nextInt();
+        
+        if(arbolBinario.buscar(num))
+            System.out.println("Se ha encontrado el número");
+        else
+            System.out.println("No se ha encontrado el número");
     }
     
 }

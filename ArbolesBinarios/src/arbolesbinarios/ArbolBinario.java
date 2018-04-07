@@ -95,29 +95,25 @@ public class ArbolBinario {
         else
             return 1 + contar(n.izq) + contar(n.der);       
     }
+    
     public Integer hojas(Nodo n){
-        if(n.izq==null&&
-                n.der==null
-                )
+        
+        if(n == null)
+            return 0;
+        else if((n.izq == null) && (n.der == null))
             return 1;
         else
-            return hojas(n.izq)+hojas(n.der);
+            return hojas(n.izq) + hojas(n.der);
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
+    public Integer profundidad(Nodo n){
+        if (n== null)
+            return 0;
+        else if(profundidad(n.izq) > profundidad(n.der))
+            return 1 + profundidad(n.izq);
+        else
+            return 1 + profundidad(n.der);
+    }
     
     
 }
