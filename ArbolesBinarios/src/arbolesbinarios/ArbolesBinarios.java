@@ -39,7 +39,7 @@ public class ArbolesBinarios {
         System.out.println(arbolBinario.preOrder(arbolBinario.nodo));
         System.out.println(arbolBinario.postOrder(arbolBinario.nodo));
         System.out.println(arbolBinario.contar(arbolBinario.nodo));
-        
+        System.out.println(arbolBinario.hojas(arbolBinario.nodo));
 
     }
     
