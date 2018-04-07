@@ -7,7 +7,7 @@ package arbolesbinarios;
 
 /**
  *
- * @author Andrés
+ * @author Andrés Sanabria & Erick Salazar
  */
 public class ArbolesBinarios {
 
@@ -15,9 +15,25 @@ public class ArbolesBinarios {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        //prueba para hacer cambios
         
+        ArbolBinario arbolBinario = new ArbolBinario();
+        
+        arbolBinario.insertar(5);
+        arbolBinario.insertar(3);
+        arbolBinario.insertar(7);
+        arbolBinario.insertar(2);
+        arbolBinario.insertar(4);
+        
+        
+        System.out.println(arbolBinario.nodo.dato);
+        System.out.println(arbolBinario.nodo.izq.dato);
+        System.out.println(arbolBinario.nodo.der.dato);
+        System.out.println(arbolBinario.nodo.izq.izq.dato);
+        System.out.println(arbolBinario.nodo.izq.der.dato);
+        
+        System.out.println(arbolBinario.buscar(4));
+
+
     }
     
 }
