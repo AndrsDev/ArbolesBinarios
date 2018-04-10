@@ -7,12 +7,14 @@ package arbolesbinarios;
 
 /**
  *
- * @author Andrés
+ * @author Andrés Sanabria & Erick Salazar
  */
 public class ArbolBinario {
     
+    //Declaración de nodo raiz.
     private Nodo nodo;
     
+    //Constructor
     public ArbolBinario(){
         this.nodo = null;       
     }
@@ -21,6 +23,7 @@ public class ArbolBinario {
         return nodo == null;
     }
     
+    //Procedimiento para insertar un elemento
     public void insertar(Integer dato){
         if(estaVacio()){
             nodo = new Nodo(dato);
@@ -47,6 +50,7 @@ public class ArbolBinario {
         }              
     }
     
+    //Búsqueda de un elemento por las ramas del árbol.
     public boolean buscar(Integer dato){
         Nodo aux = nodo;
         
@@ -64,6 +68,7 @@ public class ArbolBinario {
         return false;       
     }
     
+    //Mostrar el árbol en formato "inOrder"
     public String inOrder(){
         return inOrderH(this.nodo);
     }
@@ -75,11 +80,11 @@ public class ArbolBinario {
             return inOrderH(n.izq) + n.dato + ", " + inOrderH(n.der);
     }
     
-    
+    //Mostrar el árbol en formato "preOrder"
     public String preOrder(){
         return preOrderH(this.nodo);
     }
-    
+   
     private String preOrderH(Nodo n){
         
         if (n == null)
@@ -88,7 +93,7 @@ public class ArbolBinario {
             return n.dato + ", " + preOrderH(n.izq) + preOrderH(n.der);
     }
     
-    
+    //Mostrar el árbol en formato "postOrder"
     public String postOrder(){
         return postOrderH(this.nodo);
     }
@@ -101,7 +106,7 @@ public class ArbolBinario {
             return  postOrderH(n.izq) + postOrderH(n.der) + n.dato + ", ";
     }
     
-    
+    //Devuelve el conteo de la cantidad de elementos del árbol.
     public Integer contar(){
         return contarH(this.nodo);
     }
@@ -113,6 +118,7 @@ public class ArbolBinario {
             return 1 + contarH(n.izq) + contarH(n.der);       
     }
     
+    //Devuelve el conteo de la cantidad de hojas del árbol.
     public Integer hojas(){
         return hojasH(this.nodo);
     }
@@ -126,7 +132,7 @@ public class ArbolBinario {
             return hojasH(n.izq) + hojasH(n.der);
     }
     
-    
+    //Devuelve el nivel máximo de profundidad del árbol.
     public Integer profundidad(){
         return profundidadH(this.nodo);
     }
