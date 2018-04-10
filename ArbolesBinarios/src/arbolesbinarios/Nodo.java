@@ -7,13 +7,14 @@ package arbolesbinarios;
 
 /**
  *
- * @author Andrés
+ * @author Andrés Sanabria & Erick Daniel Salazar
  */
 public class Nodo {
     public Integer dato;
     public Nodo izq;
     public Nodo der;
     
+    //Constructor
     public Nodo(Integer dato){
         this.dato = dato;
         this.izq = null;
